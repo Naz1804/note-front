@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  --color-neutral-50: #F5F7FA;
+  --color-neutral-100: #F3F5F8;
+  --color-neutral-200: #E0E4EA;
+  --color-neutral-300: #CACFD8;
+  --color-neutral-400: #99A0AE;
+  --color-neutral-500: #717784;
+  --color-neutral-600: #525866;
+  --color-neutral-700: #2B303B;
+  --color-neutral-800: #232530;
+  --color-neutral-900: #191B25;
+  --color-neutral-950: #0E121B;
+
+  --color-blue-700: #2547D0;
+  --color-blue-500: #335CFF;
+  --color-blue-50: #EBF1FF;
+
+  --color-green-500: #21C16B;
+  --color-green-100: #D1FBE9;
+
+  --color-red-500: #FB3748;
+  --color-red-100: #FFD5D8;
+}
+
+html,
+body {
+  @apply text-neutral-950 dark:text-white dark:bg-neutral-950 overflow-y-auto overflow-x-hidden
+}
+
+@layer components {
+  .blue-btn {
+    @apply 
+    bg-blue-500 text-white rounded-lg 
+    hover:bg-blue-700 active:bg-blue-700
+    disabled:bg-neutral-100 disabled:text-neutral-300
+    dark:disabled:bg-white/20
+    outline-offset-4 outline-neutral-500
+    cursor-pointer px-4 py-3 disabled:cursor-not-allowed
+  }
+
+  .grey-btn {
+    @apply 
+    bg-neutral-100 text-neutral-600 rounded-lg border border-none
+    dark:bg-neutral-500 dark:text-neutral-200
+    hover:bg-white hover:border-neutral-300 hover:text-neutral-950
+    dark:hover:bg-neutral-600 dark:hover:text-neutral-100
+    disabled:bg-neutral-50 disabled:text-neutral-300
+    cursor-pointer px-4 py-3
+  }
+
+  .border-btn {
+    @apply
+    bg-transparent text-neutral-950 border border-neutral-300 
+    flex items-center justify-start gap-4 rounded-lg w-full
+    dark:text-white dark:border-neutral-600 
+    hover:bg-neutral-100 dark:hover:bg-neutral-800
+    disabled:bg-neutral-50 disabled:text-neutral-300
+    cursor-pointer px-4 py-3 outline-neutral-600
+  }
+
+  .text-preset-1 {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+  }
+  .text-preset-2 {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+  }
+  .text-preset-3 {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.3px;
+    font-weight: 600;
+  }
+  .text-preset-4 {
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    font-weight: 500;
+  }
+  .text-preset-5 {
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+  }
+  .text-preset-6 {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+  }
+
+  .section-padding {
+  @apply
+    pt-5 px-4 z-0 pb-10
+    md:pt-6 md:px-8 lg:hidden
+  }
+  .list-size {
+    @apply
+    max-w-[290px] xl:w-full border-r-2 px-4 py-5
+  }
+
+  .primary-input {
+    @apply 
+    border-2 border-neutral-300 dark:border-neutral-600
+    py-3 px-4 rounded-lg
+    hover:bg-neutral-50 dark:hover:bg-neutral-800
+    focus:bg-neutral-50 focus:border-neutral-950 outline-offset-4 outline-neutral-500
+    dark:focus:bg-neutral-950  dark:focus:border-neutral-600 
+  }
+
+  .nav-btn {
+    @apply
+    rounded-sm px-4.5 md:px-5.5 py-1 focus:bg-blue-50 dark:focus:bg-neutral-700 
+    flex flex-col items-center text-neutral-600
+  }
+  .nav-active {
+    @apply
+    text-blue-500 bg-blue-50 dark:bg-neutral-700
+  }
+
+  .overlay {
+    @apply
+    absolute w-screen h-screen overflow-clip top-0 left-0
+    bg-neutral-950/50 flex items-center justify-center px-4 z-30
+  }
+  .modal {
+    @apply
+    bg-white dark:bg-neutral-700 border-2 border-neutral-200 dark:border-neutral-600 
+    rounded-xl max-w-[440px]
+  }
+
+  .border-color {
+    @apply
+    border-neutral-200 dark:border-neutral-800
+  }
+
+  .bg-theme {
+    @apply
+    bg-neutral-100 dark:bg-neutral-800 
+  }
+  .bg-line {
+    @apply
+    bg-neutral-200 dark:bg-neutral-800 
+  }
+
+  .focus-link {
+    @apply
+    rounded-lg p-3 gap-2 flex items-center
+    hover:bg-neutral-100 dark:hover:bg-neutral-800
+  }
+  .hover-icon {
+    @apply
+    ml-auto text-transparent w-5 h-5
+    group-hover:text-neutral-950 dark:group-hover:text-white
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .h-nav {
+    height: calc(100vh - 56px);
+  }
+
+  .h-note {
+    height: calc(100vh - 80px);
+  }
+}
