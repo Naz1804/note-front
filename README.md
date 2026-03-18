@@ -1,87 +1,120 @@
-# Welcome to React Router!
+# Note App - Frontend
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, responsive note-taking application built with React and TypeScript. Features a clean, intuitive interface with full CRUD functionality, tag-based organization, and real-time search. Supports both email/password and Google OAuth authentication, with customizable themes (dark/light/system) and font options. Designed mobile-first with an adaptive desktop layout featuring three-column navigation for efficient note management.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Running the Application](#running-the-application)
+- [Features & Functionality](#features--functionality)
+- [User Interface](#user-interface)
+- [Project Structure](#project-structure)
+- [Routes](#routes)
+- [Future Improvements](#future-improvements)
 
 ## Features
+- User authentication (email/password & Google OAuth)
+- Create, edit, delete, and archive notes
+- Tag-based organization
+- Search functionality
+- Dark/light/system theme
+- Font customization
+- Responsive design (mobile & desktop)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Tech Stack
+- React
+- React Router v7
+- TypeScript
+- Tailwind CSS
+- Vite
 
-## Getting Started
+## Prerequisites
+- Node.js v16+
+- Backend API running
 
-### Installation
-
-Install the dependencies:
-
+## Installation
 ```bash
 npm install
 ```
 
-### Development
+## Environment Variables
+```
+VITE_API_URL=http://localhost:5000/api
+```
 
-Start the development server with HMR:
-
+## Running the Application
 ```bash
 npm run dev
 ```
+Access at `http://localhost:5173`
 
-Your application will be available at `http://localhost:5173`.
+## Features & Functionality
+### Authentication
+- Email/password registration and login
+- Google OAuth integration
+- Persistent sessions with JWT cookies
+- Protected routes
 
-## Building for Production
+### Notes Management
+- Create and edit notes with titles, content, and tags
+- Archive/unarchive notes
+- Delete notes
+- Real-time search by title and tags
+- Filter notes by tags
 
-Create a production build:
+### Customization
+- Dark/light/system theme modes
+- Font selection (Sans-serif, Serif, Monospace)
+- Settings persist across sessions
+- Change Password
 
-```bash
-npm run build
+## User Interface
+### Mobile View
+- Bottom navigation
+- Full-screen note editing
+- Swipe-friendly interface
+
+### Desktop View
+- Three-column layout (sidebar, note list, note detail)
+- Side-by-side note browsing
+
+## Project Structure
 ```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+frontend/
+├── app/
+│   ├── assets/
+│   ├── components/
+│   ├── modals/
+│   ├── routes/
+│   ├── types/
+│   └── utils/
+└── public/
 ```
+## Routes
+### Public Routes
+- `/login` - User login
+- `/register` - User registration
+- `/auth/google` - Google OAuth
 
-The containerized application can be deployed to any platform that supports Docker, including:
+### Protected Routes
+- `/notes` - All notes
+- `/notes/:id` - Note detail
+- `/notes/create` - Create note
+- `/archive` - Archived notes
+- `/archive/:id` - Archived note detail
+- `/search` - Search results
+- `/tags` - List of tags
+- `/tags/:tag` - Notes by tag
+- `/setting` - User preferences
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+## Future Improvements
+- [ ] Rich text editor
+- [ ] Note sharing
+- [ ] Collaborative editing
+- [ ] Export notes (PDF, Markdown)
+- [ ] Note templates
+- [ ] Keyboard Navigation
+- [ ] Desktop Design Searchbar interactivity
