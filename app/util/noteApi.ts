@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = import.meta.env.API_URL;
 
 export const getAllNotes = (endpoint: string, token: string) => {
     return fetch(`${BASE_URL}/notes${endpoint}`, {
