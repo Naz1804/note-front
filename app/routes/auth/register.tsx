@@ -20,7 +20,7 @@ export async function action({ request }: Route.ActionArgs) {
 
   return redirect('/notes', {
     headers: {
-      'Set-Cookie': `token=${data.token}; Path=/; HttpOnly; Secure; SameSite=Strict`
+      'Set-Cookie': `token=${data.token}; Path=/; HttpOnly; Secure; SameSite=Lax`
     }
   })
 }
