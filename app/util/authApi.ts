@@ -1,4 +1,6 @@
-const BASE_URL = import.meta.env.API_URL;
+const BASE_URL = typeof window === 'undefined' 
+  ? process.env.API_URL  // Server-side
+  : import.meta.env.VITE_API_URL;  // Client-side
 
 export const api = {
     post: async (endpoint: string, body: object, token?: string) => {
