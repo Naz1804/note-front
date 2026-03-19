@@ -14,7 +14,9 @@ const SettingList = () => {
   const handleLogout = () => {
     fetcher.submit(
       { intent: 'logout' },
-      { method: 'post' }
+      { method: 'post',
+        action: '/setting'
+       },
     );
   }
 

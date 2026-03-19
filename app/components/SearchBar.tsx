@@ -42,12 +42,12 @@ const SearchBar = ({ inputValue, handleSearch }: Props) => {
         {' '} {title}
       </h1>
 
-      <div className="flex justify-between primary-input my-4 ml-auto">
+      <Link to='/notes/search' className="flex justify-between primary-input my-4 ml-auto">
         <SearchIcon className='text-neutral-500' />
 
         <input type="search" value={inputValue} onChange={handleSearch}
         className='outline-none w-full pl-2' placeholder='Search by title or tags...'/>
-      </div>
+      </Link>
 
       <Link to='/setting'>
         <SettingIcon />
